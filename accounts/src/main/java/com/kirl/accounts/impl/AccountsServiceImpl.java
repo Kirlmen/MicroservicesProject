@@ -1,10 +1,12 @@
 package com.kirl.accounts.impl;
 
 import com.kirl.accounts.constants.AccountsConstants;
+import com.kirl.accounts.dto.AccountsDto;
 import com.kirl.accounts.dto.CustomerDto;
 import com.kirl.accounts.entity.Accounts;
 import com.kirl.accounts.entity.Customer;
 import com.kirl.accounts.exception.CustomerAlreadyExistException;
+import com.kirl.accounts.exception.ResourceNotFoundException;
 import com.kirl.accounts.mapper.AccountsMapper;
 import com.kirl.accounts.mapper.CustomerMapper;
 import com.kirl.accounts.repository.AccountsRepository;
@@ -26,10 +28,10 @@ public class AccountsServiceImpl implements IAccountsService {
 
 	@Override
 	public void createAccount(CustomerDto customerDto) {
-		Customer customer = CustomerMapper.mapToCustomer(customerDto,new Customer());
+		Customer customer = CustomerMapper.mapToCustomer(customerDto, new Customer());
 		Optional<Customer> optionalCustomer = customerRepository.findByMobileNumber(customer.getMobileNumber());
 
-		if(optionalCustomer.isPresent()){
+		if (optionalCustomer.isPresent()) {
 			throw new CustomerAlreadyExistException("Customer already registered with given mobileNumber " + customerDto.getMobileNumber());
 		}
 		customer.setCreatedAt(LocalDateTime.now());
@@ -39,11 +41,10 @@ public class AccountsServiceImpl implements IAccountsService {
 	}
 
 	/**
-	 *
 	 * @param customer - Customer object
 	 * @return new account details
 	 */
-	private Accounts createNewAccount(Customer customer){
+	private Accounts createNewAccount(Customer customer) {
 		Accounts newAccount = new Accounts();
 		newAccount.setCustomerId(customer.getCustomerId());
 		long randomAccNumber = 1000000000L + new Random().nextInt(900000000);
@@ -56,5 +57,19 @@ public class AccountsServiceImpl implements IAccountsService {
 		newAccount.setCreatedAt(LocalDateTime.now());
 
 		return newAccount;
+	}
+
+	@Override
+	public CustomerDto fetchAccount(String mobileNumber) {
+		Customer customer = customerRepository.findByMobileNumber(mobileNumber).orElseThrow(
+				() -> new ResourceNotFoundException("customer", "mobileNumber", mobileNumber)
+		);
+		Accounts accounts = accountsRepository.findByCustomerId(customer.getCustomerId()).orElseThrow(
+				() -> new ResourceNotFoundException("accounts", "customerId", customer.getCustomerId().toString())
+		);
+
+		CustomerDto customerDto = CustomerMapper.mapToCustomerDto(customer, new CustomerDto());
+		customerDto.setAccountsDto(AccountsMapper.mapToAccountsDto(accounts, new AccountsDto()));
+		return customerDto;
 	}
 }

@@ -14,19 +14,25 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(path = "/api", produces = MediaType.APPLICATION_JSON_VALUE)
 public class AccountsController {
 
-	private IAccountsService iAccountsService;
+	private final IAccountsService iAccountsService;
 
 	@Autowired
-	public AccountsController(IAccountsService iAccountsService){
+	public AccountsController(IAccountsService iAccountsService) {
 		this.iAccountsService = iAccountsService;
 	}
 
 	@PostMapping("/create")
-	ResponseEntity<ResponseDto> createAccount(@RequestBody CustomerDto customerDto){
+	ResponseEntity<ResponseDto> createAccount(@RequestBody CustomerDto customerDto) {
 		iAccountsService.createAccount(customerDto); //passing the data from the enduser to service layer.
 		return ResponseEntity
 				.status(HttpStatus.CREATED)
 				.body(new ResponseDto(AccountsConstants.STATUS_201, AccountsConstants.MESSAGE_201));
+	}
+
+	@GetMapping("/fetch")
+	public ResponseEntity<CustomerDto> fetchAccountDetails(@RequestParam String mobileNumber) {
+		CustomerDto customerDto = iAccountsService.fetchAccount(mobileNumber);
+		return ResponseEntity.status(HttpStatus.OK).body(customerDto);
 	}
 
 }
