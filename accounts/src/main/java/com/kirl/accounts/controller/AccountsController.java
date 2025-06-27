@@ -35,4 +35,19 @@ public class AccountsController {
 		return ResponseEntity.status(HttpStatus.OK).body(customerDto);
 	}
 
+	@PutMapping("/update")
+	public ResponseEntity<ResponseDto> updateAccount(@RequestBody CustomerDto customerDto){
+		boolean isUpdated = iAccountsService.updateAccount(customerDto);
+		if(isUpdated){
+			return ResponseEntity
+					.status(HttpStatus.OK)
+					.body(new ResponseDto(AccountsConstants.STATUS_200, AccountsConstants.MESSAGE_200));
+		}
+		else {
+			return ResponseEntity
+					.status(HttpStatus.BAD_REQUEST)
+					.body(new ResponseDto(AccountsConstants.STATUS_500, AccountsConstants.MESSAGE_500));
+		}
+	}
+
 }
