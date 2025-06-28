@@ -25,10 +25,10 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 	@Override
 	protected ResponseEntity<Object> handleMethodArgumentNotValid(
 			MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatusCode status, WebRequest request) {
-		Map<String,String> validationErrors = new HashMap<>();
-		List<ObjectError> validationErrorList = ex.getBindingResult().getAllErrors();
+		Map<String,String> validationErrors = new HashMap<>(); //we will put the errors here that spring threw
+		List<ObjectError> validationErrorList = ex.getBindingResult().getAllErrors(); //errors that spring throws,
 
-		validationErrorList.forEach(error->{
+		validationErrorList.forEach(error->{ //populating the hashmap with the given errors to send to the client
 			String fieldName = ((FieldError)error).getField();
 			String errorMsg = error.getDefaultMessage();
 			validationErrors.put(fieldName,errorMsg);
