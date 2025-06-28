@@ -4,14 +4,18 @@ import com.kirl.accounts.constants.AccountsConstants;
 import com.kirl.accounts.dto.CustomerDto;
 import com.kirl.accounts.dto.ResponseDto;
 import com.kirl.accounts.service.IAccountsService;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.Pattern;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(path = "/api", produces = MediaType.APPLICATION_JSON_VALUE)
+@Validated
 public class AccountsController {
 
 	private final IAccountsService iAccountsService;
@@ -22,7 +26,7 @@ public class AccountsController {
 	}
 
 	@PostMapping("/create")
-	ResponseEntity<ResponseDto> createAccount(@RequestBody CustomerDto customerDto) {
+	ResponseEntity<ResponseDto> createAccount(@Valid @RequestBody CustomerDto customerDto) {
 		iAccountsService.createAccount(customerDto); //passing the data from the enduser to service layer.
 		return ResponseEntity
 				.status(HttpStatus.CREATED)
@@ -30,34 +34,37 @@ public class AccountsController {
 	}
 
 	@GetMapping("/fetch")
-	public ResponseEntity<CustomerDto> fetchAccountDetails(@RequestParam String mobileNumber) {
+	public ResponseEntity<CustomerDto> fetchAccountDetails(@RequestParam
+	                                                       @Pattern(regexp = "(^$|[0-9]{10})", message = "AccountNumber must be 10 digits")
+	                                                       String mobileNumber) {
 		CustomerDto customerDto = iAccountsService.fetchAccount(mobileNumber);
 		return ResponseEntity.status(HttpStatus.OK).body(customerDto);
 	}
 
 	@PutMapping("/update")
-	public ResponseEntity<ResponseDto> updateAccount(@RequestBody CustomerDto customerDto){
+	public ResponseEntity<ResponseDto> updateAccount(@Valid @RequestBody CustomerDto customerDto) {
 		boolean isUpdated = iAccountsService.updateAccount(customerDto);
-		if(isUpdated){
+		if (isUpdated) {
 			return ResponseEntity
 					.status(HttpStatus.OK)
 					.body(new ResponseDto(AccountsConstants.STATUS_200, AccountsConstants.MESSAGE_200));
-		}
-		else {
+		} else {
 			return ResponseEntity
 					.status(HttpStatus.BAD_REQUEST)
 					.body(new ResponseDto(AccountsConstants.STATUS_500, AccountsConstants.MESSAGE_500));
 		}
 	}
+
 	@DeleteMapping("/delete")
-	public ResponseEntity<ResponseDto> deleteAccount(@RequestParam String mobileNumber){
+	public ResponseEntity<ResponseDto> deleteAccount(@RequestParam
+	                                                 @Pattern(regexp = "(^$|[0-9]{10})", message = "AccountNumber must be 10 digits")
+	                                                 String mobileNumber) {
 		boolean isDeleted = iAccountsService.deleteAccount(mobileNumber);
-		if(isDeleted){
+		if (isDeleted) {
 			return ResponseEntity
 					.status(HttpStatus.OK)
 					.body(new ResponseDto(AccountsConstants.STATUS_200, AccountsConstants.MESSAGE_200));
-		}
-		else {
+		} else {
 			return ResponseEntity
 					.status(HttpStatus.BAD_REQUEST)
 					.body(new ResponseDto(AccountsConstants.STATUS_500, AccountsConstants.MESSAGE_500));
