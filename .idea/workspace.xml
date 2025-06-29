@@ -4,28 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7b00aa1-6bb9-42e7-aee7-acb70cab078c" name="Changes" comment="Integrate OpenAPI annotations for improved API documentation, introduce JPA auditing, and enhance DTOs with validation and descriptions.">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans/src/main/java/com/kirl/loans/constants/LoansConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans/src/main/java/com/kirl/loans/controller/LoansController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans/src/main/java/com/kirl/loans/dto/ErrorResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans/src/main/java/com/kirl/loans/dto/LoansDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans/src/main/java/com/kirl/loans/dto/ResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans/src/main/java/com/kirl/loans/entity/BaseEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans/src/main/java/com/kirl/loans/entity/Loans.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans/src/main/java/com/kirl/loans/repository/LoansRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans/src/main/java/com/kirl/loans/service/ILoansService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans/src/main/java/com/kirl/loans/service/impl/ILoansServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans/src/main/resources/schema.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/section2.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/src/main/java/com/kirl/accounts/impl/AccountsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/java/com/kirl/accounts/service/impl/AccountsServiceImpl.java" afterDir="false" />
+    <list default="true" id="a7b00aa1-6bb9-42e7-aee7-acb70cab078c" name="Changes" comment="Introduce loans module with entity, repository, service, controller, and support for DTOs, constants, and SQL schema.">
+      <change afterPath="$PROJECT_DIR$/loans/src/main/java/com/kirl/loans/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans/src/main/java/com/kirl/loans/exception/LoanAlreadyExistsException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans/src/main/java/com/kirl/loans/exception/ResourceNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans/src/main/java/com/kirl/loans/mapper/LoansMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/kirl/loans/controller/LoansController.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/kirl/loans/controller/LoansController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/kirl/loans/entity/Loans.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/kirl/loans/entity/Loans.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/kirl/loans/repository/LoansRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/kirl/loans/repository/LoansRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/kirl/loans/service/ILoansService.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/kirl/loans/service/ILoansService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/kirl/loans/service/impl/ILoansServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/kirl/loans/service/impl/ILoansServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,14 +24,20 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Exception" />
         <option value="Class" />
-        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Volkan" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SIGN_OFF_COMMIT" value="true" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -84,7 +79,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.AccountsApplication.executor": "Debug",
-    "Spring Boot.LoansApplication.executor": "Debug",
+    "Spring Boot.LoansApplication.executor": "Run",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
@@ -107,6 +102,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.kirl.loans.exception" />
       <recent name="com.kirl.accounts.dto" />
       <recent name="com.kirl.accounts.repository" />
       <recent name="com.kirl.accounts.entity" />
@@ -165,7 +161,7 @@
       <workItem from="1751093981251" duration="19731000" />
       <workItem from="1751134005758" duration="40000" />
       <workItem from="1751180112463" duration="2957000" />
-      <workItem from="1751184021147" duration="3452000" />
+      <workItem from="1751184021147" duration="10020000" />
     </task>
     <task id="LOCAL-00001" summary="Implement account creation service and exception handling">
       <option name="closed" value="true" />
@@ -215,7 +211,23 @@
       <option name="project" value="LOCAL" />
       <updated>1751127843687</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Introduce loans module with entity, repository, service, controller, and support for DTOs, constants, and SQL schema.">
+      <option name="closed" value="true" />
+      <created>1751187978388</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1751187978388</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Introduce loans module with entity, repository, service, controller, and support for DTOs, constants, and SQL schema.">
+      <option name="closed" value="true" />
+      <created>1751187991540</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1751187991540</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,6 +251,7 @@
     <MESSAGE value="Add account deletion functionality/api and handle resource not found exceptions" />
     <MESSAGE value="Add input validation in DTOs, enhance exception handling, and update controllers to support validation" />
     <MESSAGE value="Integrate OpenAPI annotations for improved API documentation, introduce JPA auditing, and enhance DTOs with validation and descriptions." />
-    <option name="LAST_COMMIT_MESSAGE" value="Integrate OpenAPI annotations for improved API documentation, introduce JPA auditing, and enhance DTOs with validation and descriptions." />
+    <MESSAGE value="Introduce loans module with entity, repository, service, controller, and support for DTOs, constants, and SQL schema." />
+    <option name="LAST_COMMIT_MESSAGE" value="Introduce loans module with entity, repository, service, controller, and support for DTOs, constants, and SQL schema." />
   </component>
 </project>

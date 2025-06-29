@@ -14,8 +14,7 @@ public class Loans extends BaseEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "loan_id")
-	@NotNull
-	private long LoanId;
+	private Long LoanId;
 
 	@Column(name = "mobile_number")
 	@NotNull
@@ -31,15 +30,15 @@ public class Loans extends BaseEntity {
 
 	@Column(name = "total_loan")
 	@NotNull
-	private long totalLoan;
+	private int totalLoan;
 
 	@Column(name = "amount_paid")
 	@NotNull
-	private long amountPaid;
+	private int amountPaid;
 
 	@Column(name = "outstanding_amount")
 	@NotNull
-	private long outstandingAmount;
+	private int outstandingAmount;
 
 
 
