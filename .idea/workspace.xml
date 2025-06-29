@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a7b00aa1-6bb9-42e7-aee7-acb70cab078c" name="Changes" comment="Update workspace and compiler settings to enhance annotation processing for the accounts module.">
-      <changelist_data name="Volkan" email="" automatic="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -153,6 +152,7 @@
       <workItem from="1751134005758" duration="40000" />
       <workItem from="1751180112463" duration="2957000" />
       <workItem from="1751184021147" duration="10749000" />
+      <workItem from="1751199652397" duration="1268000" />
     </task>
     <task id="LOCAL-00001" summary="Implement account creation service and exception handling">
       <option name="closed" value="true" />
@@ -226,7 +226,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751197627889</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Update workspace and compiler settings to enhance annotation processing for the accounts module.">
+      <option name="closed" value="true" />
+      <created>1751199656422</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1751199656422</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
