@@ -4,17 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7b00aa1-6bb9-42e7-aee7-acb70cab078c" name="Changes" comment="Introduce loans module with entity, repository, service, controller, and support for DTOs, constants, and SQL schema.">
-      <change afterPath="$PROJECT_DIR$/loans/src/main/java/com/kirl/loans/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans/src/main/java/com/kirl/loans/exception/LoanAlreadyExistsException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans/src/main/java/com/kirl/loans/exception/ResourceNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans/src/main/java/com/kirl/loans/mapper/LoansMapper.java" afterDir="false" />
+    <list default="true" id="a7b00aa1-6bb9-42e7-aee7-acb70cab078c" name="Changes" comment="Implement loan creation and fetching functionality with exception handling, mapper support, and repository integration. &#10;&#10;Signed-off-by: Volkan">
+      <changelist_data name="Volkan" email="" automatic="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/kirl/loans/controller/LoansController.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/kirl/loans/controller/LoansController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/kirl/loans/entity/Loans.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/kirl/loans/entity/Loans.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/kirl/loans/repository/LoansRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/kirl/loans/repository/LoansRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/kirl/loans/service/ILoansService.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/kirl/loans/service/ILoansService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/kirl/loans/service/impl/ILoansServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/kirl/loans/service/impl/ILoansServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +29,6 @@
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="SIGN_OFF_COMMIT" value="true" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -161,7 +152,7 @@
       <workItem from="1751093981251" duration="19731000" />
       <workItem from="1751134005758" duration="40000" />
       <workItem from="1751180112463" duration="2957000" />
-      <workItem from="1751184021147" duration="10020000" />
+      <workItem from="1751184021147" duration="10749000" />
     </task>
     <task id="LOCAL-00001" summary="Implement account creation service and exception handling">
       <option name="closed" value="true" />
@@ -227,7 +218,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751187991540</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Implement loan creation and fetching functionality with exception handling, mapper support, and repository integration. &#10;&#10;Signed-off-by: Volkan">
+      <option name="closed" value="true" />
+      <created>1751197627889</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1751197627889</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,6 +251,7 @@
     <MESSAGE value="Add input validation in DTOs, enhance exception handling, and update controllers to support validation" />
     <MESSAGE value="Integrate OpenAPI annotations for improved API documentation, introduce JPA auditing, and enhance DTOs with validation and descriptions." />
     <MESSAGE value="Introduce loans module with entity, repository, service, controller, and support for DTOs, constants, and SQL schema." />
-    <option name="LAST_COMMIT_MESSAGE" value="Introduce loans module with entity, repository, service, controller, and support for DTOs, constants, and SQL schema." />
+    <MESSAGE value="Implement loan creation and fetching functionality with exception handling, mapper support, and repository integration. &#10;&#10;Signed-off-by: Volkan" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement loan creation and fetching functionality with exception handling, mapper support, and repository integration. &#10;&#10;Signed-off-by: Volkan" />
   </component>
 </project>
