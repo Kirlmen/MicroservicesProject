@@ -1,4 +1,4 @@
-package com.kirl.accounts.impl;
+package com.kirl.accounts.service.impl;
 
 import com.kirl.accounts.constants.AccountsConstants;
 import com.kirl.accounts.dto.AccountsDto;
