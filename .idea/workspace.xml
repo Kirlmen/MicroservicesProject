@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7b00aa1-6bb9-42e7-aee7-acb70cab078c" name="Changes" comment="">
+    <list default="true" id="a7b00aa1-6bb9-42e7-aee7-acb70cab078c" name="Changes" comment="Update workspace and compiler settings to enhance annotation processing for the accounts module.">
       <changelist_data name="Volkan" email="" automatic="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -251,6 +252,7 @@
     <MESSAGE value="Integrate OpenAPI annotations for improved API documentation, introduce JPA auditing, and enhance DTOs with validation and descriptions." />
     <MESSAGE value="Introduce loans module with entity, repository, service, controller, and support for DTOs, constants, and SQL schema." />
     <MESSAGE value="Implement loan creation and fetching functionality with exception handling, mapper support, and repository integration. &#10;&#10;Signed-off-by: Volkan" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement loan creation and fetching functionality with exception handling, mapper support, and repository integration. &#10;&#10;Signed-off-by: Volkan" />
+    <MESSAGE value="Update workspace and compiler settings to enhance annotation processing for the accounts module." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update workspace and compiler settings to enhance annotation processing for the accounts module." />
   </component>
 </project>
