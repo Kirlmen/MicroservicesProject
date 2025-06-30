@@ -9,7 +9,11 @@ public interface ILoansService {
 	 */
 	void createLoan(String mobileNumber);
 
-	public LoansDto fetchLoans(String mobileNumber);
+	LoansDto fetchLoans(String mobileNumber);
+
+	boolean updateLoans(LoansDto loansDto);
+
+	boolean deleteLoans(String mobileNumber);
 
 }
 

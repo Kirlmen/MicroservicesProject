@@ -48,6 +48,31 @@ public class ILoansServiceImpl implements ILoansService {
 	}
 
 	/**
+	 *
+	 * @param loansDto the DTO containing updated loan details, including loan ID, mobile number,
+	 *                 loan type, total loan amount, amount paid, and outstanding amount
+	 * @return true if the update operation is successful; false otherwise
+	 */
+	@Override
+	public boolean updateLoans(LoansDto loansDto) {
+		Loans storedLoan = loansRepository.findByLoanNumber(loansDto.getLoanNumber()).orElseThrow(
+				() -> new ResourceNotFoundException("Loan", "loanNumber", loansDto.getLoanNumber())
+		);
+		LoansMapper.mapToLoans(loansDto, storedLoan);
+		loansRepository.save(storedLoan);
+		return true;
+	}
+
+	@Override
+	public boolean deleteLoans(String mobileNumber) {
+		Loans loans = loansRepository.findByMobileNumber(mobileNumber).orElseThrow(
+				() -> new ResourceNotFoundException("Loan", "mobileNumber", mobileNumber)
+		);
+		loansRepository.delete(loans);
+		return true;
+	}
+
+	/**
 	 * @param mobileNumber - Mobile Number of the Customer
 	 * @return the new loan details
 	 */
@@ -60,8 +85,6 @@ public class ILoansServiceImpl implements ILoansService {
 		newLoans.setTotalLoan(LoansConstants.NEW_LOAN_LIMIT);
 		newLoans.setAmountPaid(0);
 		newLoans.setOutstandingAmount(LoansConstants.NEW_LOAN_LIMIT);
-		newLoans.setCreatedAt(LocalDateTime.now());
-		newLoans.setCreatedBy("Anon");
 		return newLoans;
 	}
 }

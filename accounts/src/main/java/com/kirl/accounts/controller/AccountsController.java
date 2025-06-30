@@ -80,7 +80,7 @@ public class AccountsController {
 			)
 	})
 	public ResponseEntity<CustomerDto> fetchAccountDetails(@RequestParam
-	                                                       @Pattern(regexp = "(^$|[0-9]{10})", message = "AccountNumber must be 10 digits")
+	                                                       @Pattern(regexp = "(^$|[0-9]{10})", message = "mobileNumber must be 10 digits")
 	                                                       String mobileNumber) {
 		CustomerDto customerDto = iAccountsService.fetchAccount(mobileNumber);
 		return ResponseEntity.status(HttpStatus.OK).body(customerDto);

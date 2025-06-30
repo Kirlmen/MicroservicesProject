@@ -1,29 +1,38 @@
 package com.kirl.loans.entity;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.EntityListeners;
 import jakarta.persistence.MappedSuperclass;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedBy;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
 
 @MappedSuperclass
 @Getter@Setter@ToString
+@EntityListeners(AuditingEntityListener.class)
 public class BaseEntity {
 
-	@Column(name = "created_at")
-	@NotNull
-	private LocalDateTime createdAt;
+	@CreatedDate
+	@Column(updatable = false)
+	LocalDateTime createdAt;
 
-	@Column(name = "created_by")
-	@NotNull
-	private String createdBy;
+	@CreatedBy
+	@Column(updatable = false)
+	String createdBy;
 
-	@Column(name = "updated_at")
-	private LocalDateTime updatedAt;
+	@LastModifiedDate
+	@Column(insertable = false)
+	LocalDateTime updatedAt;
 
-	@Column(name = "updated_by")
-	private String updatedBy;
+	@LastModifiedBy
+	@Column(insertable = false)
+	String updatedBy;
 }
