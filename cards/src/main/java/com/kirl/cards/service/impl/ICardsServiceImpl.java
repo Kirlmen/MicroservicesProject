@@ -1,8 +1,11 @@
 package com.kirl.cards.service.impl;
 
 import com.kirl.cards.constants.CardsConstants;
+import com.kirl.cards.dto.CardsDto;
 import com.kirl.cards.entity.Cards;
 import com.kirl.cards.exception.CardAlreadyExistsException;
+import com.kirl.cards.exception.ResourceNotFoundException;
+import com.kirl.cards.mapper.CardsMapper;
 import com.kirl.cards.repository.CardsRepository;
 import com.kirl.cards.service.ICardsService;
 import lombok.AllArgsConstructor;
@@ -44,4 +47,29 @@ public class ICardsServiceImpl implements ICardsService {
 		newCard.setAvailableAmount(CardsConstants.NEW_CARD_LIMIT);
 		return newCard;
 	}
+
+	/**
+	 *
+	 * @param mobileNumber- Mobile number of the Customer
+	 * @return CardsDto of the given mobileNumber
+	 */
+	@Override
+	public CardsDto fetchCards(String mobileNumber) {
+		Cards cards = cardsRepository.findByMobileNumber(mobileNumber).orElseThrow(
+				()-> new ResourceNotFoundException("cardsDto", "mobileNumber", mobileNumber)
+		);
+
+		return CardsMapper.mapToCardsDto(cards, new CardsDto());
+	}
+
+	@Override
+	public boolean updateCards(CardsDto cardsDto) {
+		Cards cards = cardsRepository.findByCardNumber(cardsDto.getCardNumber()).orElseThrow(
+				()-> new ResourceNotFoundException("cards", "cardNumber",cardsDto.getCardNumber())
+		);
+		CardsMapper.mapToCards(cardsDto, cards);
+		cardsRepository.save(cards);
+		return true;
+	}
+
 }
