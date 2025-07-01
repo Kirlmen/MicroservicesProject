@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7b00aa1-6bb9-42e7-aee7-acb70cab078c" name="Changes" comment="Enhance global exception handling with custom validation error responses and add OpenAPI dependency">
+    <list default="true" id="a7b00aa1-6bb9-42e7-aee7-acb70cab078c" name="Changes" comment="Add deleteCards service and controller method with validation for mobile number">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/kirl/cards/CardsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/kirl/cards/CardsApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/kirl/cards/controller/CardsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/kirl/cards/controller/CardsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/kirl/cards/service/ICardsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/kirl/cards/service/ICardsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/kirl/cards/service/impl/ICardsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/kirl/cards/service/impl/ICardsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/kirl/cards/dto/CardsDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/kirl/cards/dto/CardsDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/kirl/loans/LoansApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/kirl/loans/LoansApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/kirl/loans/controller/LoansController.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/kirl/loans/controller/LoansController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,7 +190,7 @@
       <workItem from="1751201017989" duration="1220000" />
       <workItem from="1751278269787" duration="12098000" />
       <workItem from="1751304651637" duration="9154000" />
-      <workItem from="1751347775343" duration="2877000" />
+      <workItem from="1751347775343" duration="4771000" />
     </task>
     <task id="LOCAL-00001" summary="Implement account creation service and exception handling">
       <option name="closed" value="true" />
@@ -326,7 +328,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751354132078</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Add deleteCards service and controller method with validation for mobile number">
+      <option name="closed" value="true" />
+      <created>1751354718422</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1751354718422</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -360,6 +370,7 @@
     <MESSAGE value="Add cards module with entities, services, controllers, exception handling, JPA auditing, DTOs, mappers, and schema integration" />
     <MESSAGE value="Add fetch and update card services with enhanced exception handling and validation in controller, service, and repository layers" />
     <MESSAGE value="Enhance global exception handling with custom validation error responses and add OpenAPI dependency" />
-    <option name="LAST_COMMIT_MESSAGE" value="Enhance global exception handling with custom validation error responses and add OpenAPI dependency" />
+    <MESSAGE value="Add deleteCards service and controller method with validation for mobile number" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add deleteCards service and controller method with validation for mobile number" />
   </component>
 </project>
