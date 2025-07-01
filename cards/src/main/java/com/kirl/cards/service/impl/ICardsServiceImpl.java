@@ -72,4 +72,13 @@ public class ICardsServiceImpl implements ICardsService {
 		return true;
 	}
 
+	@Override
+	public boolean deleteCards(String mobileNumber) {
+		Cards cards = cardsRepository.findByMobileNumber(mobileNumber).orElseThrow(
+				() -> new ResourceNotFoundException("cards", "mobileNumber", mobileNumber)
+		);
+		cardsRepository.delete(cards);
+		return true;
+	}
+
 }

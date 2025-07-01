@@ -26,4 +26,11 @@ public interface ICardsService {
 	 * @return true if the update is successful, false otherwise.
 	 */
 	boolean updateCards(CardsDto cardsDto);
+
+	/**
+	 *
+	 * @param mobileNumber-Mobile number of the customer
+	 * @return boolean, if it's true, deletion is successful, or otherwise.
+	 */
+	boolean deleteCards(String mobileNumber);
 }

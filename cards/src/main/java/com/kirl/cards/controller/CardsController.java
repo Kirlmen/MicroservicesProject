@@ -50,4 +50,16 @@ public class CardsController {
 			);
 		}
 	}
+
+	@DeleteMapping("/delete")
+	public ResponseEntity<ResponseDto> deleteCards(@RequestParam
+	                                                   @Pattern(regexp = "(^$|[0-9]{10})", message = "Mobile number must be 10 digits")
+	                                                   String mobileNumber){
+		boolean res = iCardsService.deleteCards(mobileNumber);
+		if(res){
+			return ResponseEntity.status(HttpStatus.OK).body(new ResponseDto(CardsConstants.STATUS_200, CardsConstants.MESSAGE_200));
+ 		} else {
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ResponseDto(CardsConstants.STATUS_417, CardsConstants.MESSAGE_417_DELETE));
+		}
+	}
 }
